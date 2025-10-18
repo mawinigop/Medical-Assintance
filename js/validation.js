@@ -258,36 +258,48 @@ const validateField = (field) => {
 
 };
 
+// confirmation function
+function confirmation() {
+  return confirm("Are you sure you want to reset this form?");
+}
+
 if (form) {
   form.addEventListener('reset', e => {
+    // if the user click ok, reset the form
+    if (confirmation()) {
+      form.reset();
 
-    setTimeout(() => {
-      const fields = [names, email, phone, birth, allergies, medications, pregnancys, noneBox, medicalservices, appointmentDate];
+      setTimeout(() => {
+        const fields = [names, email, phone, birth, allergies, medications, pregnancys, noneBox, medicalservices, appointmentDate];
 
-      fields.forEach(field => {
-        if (!field) return;
+        fields.forEach(field => {
+          if (!field) return;
 
-        field.classList.remove('error-border');
-        field.style.borderColor = '';
-        const parent = field.parentElement;
-        if (parent) {
-          parent.classList.remove('error', 'success');
-          const errorMsg = parent.querySelector('.error');
-          if (errorMsg) errorMsg.remove();
-        }
+          field.classList.remove('error-border');
+          field.style.borderColor = '';
+          const parent = field.parentElement;
+          if (parent) {
+            parent.classList.remove('error', 'success');
+            const errorMsg = parent.querySelector('.error');
+            if (errorMsg) errorMsg.remove();
+          }
 
-    
-        if (field === noneBox) {
-          noneBox.querySelectorAll("input[type='checkbox']").forEach(cb => cb.checked = false);
-          noneBox.style.borderColor = '';
-        }
+      
+          if (field === noneBox) {
+            noneBox.querySelectorAll("input[type='checkbox']").forEach(cb => cb.checked = false);
+            noneBox.style.borderColor = '';
+          }
 
-       
-        if (field.tagName.toLowerCase() === 'select') {
-          field.selectedIndex = 0;
-        }
-      });
-    }, 0);
+        
+          if (field.tagName.toLowerCase() === 'select') {
+            field.selectedIndex = 0;
+          }
+        });
+      }, 0);
+      // if the user click cancel, prevent the default action so the action is not submitted then the fill up form is not reset
+    } else {
+      e.preventDefault();
+    }
   });
 }
 
