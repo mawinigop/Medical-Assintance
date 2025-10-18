@@ -278,7 +278,7 @@ const validateField = (field) => {
 
 if (form) {
   form.addEventListener('reset', e => {
-    const confirmation = confirm("Are you sure you want to reset this form?");
+    const confirmation = confirm("Changes that you made may not be saved this form?");
     // if the user click ok, reset the form
     if (confirmation) {
       form.reset();
