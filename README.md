@@ -1,6 +1,6 @@
 # Medical-Assintance
 
 ---
-fix This form will be if the user click the clear ask the js "are you sure" so if the user not intentionally
+When the user clicks Clear, a confirmation message should appear asking if they really want to clear the form.
 
 ---
