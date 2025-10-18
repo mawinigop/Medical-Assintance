@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Form</title>
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/header-form.css">
+</head>
+<body>
+    <div class="target-burger">
+        <header>
+            <h1 id="logo"> 
+                <a href="../index.html" id="medical_form" class="logo-link"> 
+                <img src="../logo/logo.png" class="logo-img" alt="Medical Assistant Logo">
+                <span class="logo-text">Medical Assistance</span>
+                </a>
+            </h1>
+        </header>
+        <button class="menu-toggle" id="menu-button" aria-label="Toggle menu" aria-controls="primary-nav" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav id="primary-nav">
+            <a href="../html/form.html">Medical Form</a>
+            <a href="../html/about.html">About Us</a> 
+            <a href="../html/contact.html">Contact Us</a>
+        </nav>
+    </div>
+
+    <main>
+        <div class="container">
+            <div>
+                <h2>Available Medical Services</h2>
+                <table>
+                    <caption><span class="orange">Medical</span> <span class="blue">Service</span></caption>
+                    <tr>
+                        <th rowspan="2">Room Number</th>
+                        <th rowspan="2">Room Type</th>
+                        <th colspan="2">Schedule</th>
+                    </tr>
+                    <tr>
+                        <th>Day</th>
+                        <th>Time</th>
+                    </tr>
+                    <tr id="room-101">
+                        <td>101</td>
+                        <td>Diagnostic</td>
+                        <td>Monday & Friday</td>
+                        <td>9:00-5:00 PM</td>
+                    </tr>
+                    <tr id="room-102">
+                        <td>102</td>
+                        <td>X-ray</td>
+                        <td>Wednesday</td>
+                        <td>9:00-5:00 PM</td>
+                    </tr>
+                    <tr id="room-103">
+                        <td>103</td>
+                        <td>Ultrasound</td>
+                        <td>Monday</td>
+                        <td>9:00-5:00 PM</td>
+                    </tr>
+                    <tr id="room-104">
+                        <td>104</td>
+                        <td>Optical</td>
+                        <td class="highlight" rowspan="2">Friday</td>
+                        <td class="highlight" rowspan="2">8:00-5:00 PM</td>
+                    </tr>
+                    <tr id="room-105">
+                        <td class="highlight">105</td>
+                        <td class="highlight">Dental</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div id="medical-forms">
+                <h2>Medical Form</h2>
+                    <form id="forms" action="../html/submit.html" method="post">
+                        <p  class="form-group"><b>PERSONAL INFORMATION</b></p>
+                        <div id="form">
+                            <div class="input-control">
+                                <label for="name">Full Name:<span class="red">*</span></label> <br />
+                                <input type="text" id="name" name="name" placeholder="e.g., Doe, John M." ><br />
+                            </div>
+                            <div class="input-control">
+                                <label for="birth">Date of Birth:<span class="red">*</span></label> <br />
+                                <input type="date" id="birth" name="birth"> <br />
+                            </div>
+                            <div class="input-control">
+                                <label for="email">Email Address:<span class="red">*</span></label> <br />
+                                <input type="email" id="email" name="email" placeholder="e.g., Doe@gmail.com">
+                            </div>
+                            <div class="input-control">
+                                <label for="phone">Phone Number:<span class="red">*</span></label> 
+                                <input type="phone" id="phone" name="phone" placeholder="123-456-7890">
+                            </div>
+                        </div>
+                        <p class="form-group"><b>MEDICAL HISTORY</b></p>
+                        <div id="medical-history">
+                            <div>
+                                <div class="input-control">
+                                    <br/>
+                                    <label for="allergies">Do you have any known allergies? If yes, please list:<span class="red">*</span></label> <br /> 
+                                    <textarea name="allergies" id="allergies" cols="29" rows="1" placeholder="e.g., Shrimp, Fish, etc."></textarea>
+                                    <br />
+                                </div>
+                                <div class="input-control">
+                                    <label for="medications">Are you taking any medications? if yes, please list:<span class="red">*</span></label> <br />
+                                    <textarea name="medications" id="medications" cols="29" rows="1" placeholder="e.g., Aspirin, Ibuprofen, etc."></textarea>
+                                    <br />
+                                </div>
+                                <div class="input-control">
+                                    <label for="pregnancy">Are you currently pregnant? if yes, please list:<span class="red">*</span></label> <br />
+                                    <textarea name="pregnancy" id="pregnancy" cols="29" rows="1" placeholder="Please answer with Yes, No, or N/A. If Yes, provide details."></textarea>
+                                </div>
+                            </div>
+                            <div class="input-control">
+                                <p id="conditions">Have you ever had any of the following conditions? (check all that apply) <span class="red">*</span> </p>
+                                <div id="nones">
+                                    <input type="checkbox" id="cancer" name="cancer" value="Cancer">
+                                    <label for="cancer">Cancer</label><br />
+                                    <input type="checkbox" id="asthma" name="asthma" value="Asthma">
+                                    <label for="asthma">Asthma</label><br />
+                                    <input type="checkbox" id="diabetes" name="diabetes" value="Diabetes">
+                                    <label for="diabetes">Diabetes</label><br />
+                                    <input type="checkbox" id="heart" name="heart" value="Heart">
+                                    <label for="heart">Heart Disease</label><br />
+                                    <input type="checkbox" id="high blood pressure" name="high blood pressure" value="High Blood Pressure">
+                                    <label for="high blood pressure">High Blood Pressure</label><br />
+                                    <input type="checkbox" id="hypertension" name="hypertension" value="Hypertension">
+                                    <label for="hypertension">Hypertension</label><br />
+                                    <input type="checkbox" id="stroke" name="stroke" value="Stroke">
+                                    <label for="stroke">Stroke</label><br />
+                                    <input type="checkbox" id="arthritis" name="arthritis" value="Arthritis">
+                                    <label for="arthritis">Arthritis</label><br />
+                                    <input type="checkbox" id="kidney" name="kidney" value="Kidney">
+                                    <label for="kidney">Epilepsy</label><br />
+                                    <input type="checkbox" id="none" name="none" value="None">
+                                    <label for="none">None of the above</label>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <p class="form-group"><b>MEDICAL ASSISTANCE</b></p>
+                        <div class="input-control">
+                        <label for="medicalservices">Select Medical Assistant:<span class="red">*</span></label> <br />
+                            <select name="medicalservices" id="medicalservices">
+                                <option value="">--Choose a Medical Assistant--</option>
+                                <option value="101">Room 101 - Diagnostic</option>
+                                <option value="102">Room 102 - X-ray</option>
+                                <option value="103">Room 103 - Ultrasound</option>
+                                <option value="104">Room 104 - Optical</option>
+                                <option value="105">Room 105 - Dental</option>
+                            </select>
+                        </div>
+                        <p class="form-group"><b>APPOINTMENT DATE</b></p>
+                        <div class="input-control">
+                            <label for="appointmentdate">Select Appointment Date:<span class="red">*</span></label><br>
+                            <input type="date" id="appointmentdate" name="appointmentdate" >
+                        </div>
+                        <p class="form-group"><b>MEDICAL CONCERN</b></p>
+                        <label for="feedback">Please describe your medical concern:</label>
+                        <textarea name="feedback" id="feedback" cols="30" rows="5"></textarea>
+                        <br />
+                        
+                        <button type="submit">Submit</button>
+                        <button type="reset">Clear</button>
+
+                        <div id="footer">
+                            <div class="footer-item">
+                                <img src="../images/world.png" width="20" height="20" alt="world">
+                                <span>www.medicalassistance.com</span>
+                            </div>
+                            <div class="footer-item">
+                                <img src="../images/maps-and-flags.png" width="20" height="20" alt="location">
+                                <span>Apalit, Pampanga</span>
+                            </div>
+                        </div>
+                    </form>
+            </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Medical Assistance. All rights reserved.</p>
+    </footer>
+    <script src="../js/toggle.js"></script>
+    <script src="../js/validation.js"></script>
+    <script src="../js/highlight.js"></script>
+    </body>
+    </html>

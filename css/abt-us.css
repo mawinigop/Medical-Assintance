@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(#ECEFFE, #CED6FB);
+}
+
+.header {
+  position: relative;
+  background: url('../images/about/hush-naidoo-jade-photography-yo01Z-9HQAw-unsplash.jpg') center/cover no-repeat;
+  background-position: center 50%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.content-area {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  padding: 30px 5%;
+}
+
+.content {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.content h2 {
+  color: #34495e;
+  margin-bottom: 10px;
+}
+
+.content p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.team-content h2 {
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+.team-content {
+  background: #f4f8fc;
+  text-align: center;
+  padding: 40px 5% 30px;
+}
+
+.team-content p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.team-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.team-member { 
+  background: #fff; 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
+} 
+
+.team-member img {
+  width: 100%;
+  height: 350px;              
+  object-fit: cover;          
+  object-position: center;    
+  border-radius: 10px;
+  background-color: #f5f6fa;  
+  margin-bottom: 12px;
+}
+
+.team-member h3 {
+  font-size: 1rem; 
+  margin-bottom: 4px; 
+  color: #34495e; 
+} 
+
+.team-member address { 
+  font-size: 0.85rem; 
+  color: #555; 
+}
+
+.FAQs-section {
+  background: #f0f5ff;
+  padding: 30px;
+  border-radius: 12px;
+  margin: 20px;
+}
+
+.FAQs-section h2 {
+  color: #34495e;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.accordion {
+  background-color: #fff;
+  color: #444;
+  cursor: pointer;
+  padding: 18px 20px;
+  width: 100%;
+  border: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: left;
+  font-size: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  transition: 0.4s;
+}
+
+.accordion:hover {
+  background-color: #dce3ef;
+}
+
+.accordion.active {
+  background-color: #22436383;
+}
+
+.icon {
+  font-weight: bold;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.accordion.active .icon {
+  transform: rotate(180deg);
+}
+
+.panel {
+  display: none;
+  padding: 0 18px;
+  background-color: white;
+  overflow: hidden;
+  border-left: 3px solid #34495e;
+  border-radius: 0 0 8px 8px;
+  margin-top: -8px;
+  margin-bottom: 10px;
+}
+
+.panel p {
+  padding: 10px ; 
+  margin: 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #34495e;
+  color: #fff;
+}
+
+@media (min-width: 601px) {
+  .header {
+    height: 250px;
+  }
+
+  .team-member {
+    padding: 60px;
+  }
+  .team-member img {
+    height: 250px;
+    object-position: cover;
+  }
+
+  #primary-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .logo-img {
+    width: 120px; 
+    height: auto;
+  }
+
+  .logo-text {
+      font-size: 25px;
+  }
+
+  .team-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .content-area {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .content-area .content:nth-child(3) {
+    grid-column: 1 / -1; 
+    justify-self: center; 
+    max-width: 500px;     
+  }
+}
+
+@media (min-width: 1025px) {
+  .header {
+    height: 350px;
+  }
+
+  .team-member {
+    padding: 20px; 
+  }
+/* 
+  .team-member img {
+    height: 30;
+    object-position: center; 
+  } */
+  .team-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .content-area {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .content-area .content:nth-child(3) {
+    grid-column: auto;     
+    justify-self: stretch; 
+    max-width: none;
+  }
+
+}
