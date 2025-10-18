@@ -38,18 +38,35 @@ form.addEventListener('submit', e => {
 
 if (noneBox) {
   const checkboxes = noneBox.querySelectorAll("input[type='checkbox']");
+  const noneCheckbox = noneBox.querySelector("#none");
 
-  checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', () => {
+  // Loop through all checkboxes
+  checkboxes.forEach(function (checkbox) {
+    checkbox.addEventListener('change', function () {
       const inputControl = noneBox.parentElement;
-      let checked = false;
-      checkboxes.forEach(box => {
-        if (box.checked) {
-          checked = true;
-        }
-      });
 
-      if (checked) {
+      let isNoneChecked = noneCheckbox.checked;
+      let otherChecked = false;
+
+      // Check if any other box (not "none") is checked
+      for (let i = 0; i < checkboxes.length; i++) {
+        let box = checkboxes[i];
+        if (box !== noneCheckbox && box.checked) {
+          otherChecked = true;
+        }
+      }
+
+      // If "None of the above" and another are both checked
+      if (isNoneChecked && otherChecked) {
+        inputControl.classList.add('error');
+        setError(noneBox, 'You selected "None of the above". Please uncheck other your conditions.');
+        noneBox.style.borderColor = 'red';
+        noneCheckbox.checked = false; // uncheck "None"
+        return;
+      }
+
+      // Normal validation
+      if (isNoneChecked || otherChecked) {
         inputControl.classList.remove('error');
         const errorMessage = inputControl.querySelector('.error');
         if (errorMessage) {
@@ -57,12 +74,12 @@ if (noneBox) {
         }
         noneBox.style.borderColor = '';
       } else {
+        inputControl.classList.add('error');
         setError(noneBox, 'Please select at least one condition');
       }
     });
   });
 }
-
 
 const setError = (element, message) => {
   if (!element) return;
