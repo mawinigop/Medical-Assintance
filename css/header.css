@@ -11,17 +11,9 @@
     text-decoration: none;
 }
 
-.logo-text {
-    background: linear-gradient(90deg, #008AB8, #4DB6AC);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
 .logo-img {
-    width: 50px; 
+    margin-left: 15px;
+    width: 200px; 
     height: auto;
 }
 
@@ -127,12 +119,8 @@ nav {
     }
 
     .logo-img {
-        width: 120px; 
+        width: 220px; 
         height: auto;
-    }
-
-    .logo-text {
-        font-size: 25px;
     }
 }
 
@@ -174,16 +162,11 @@ nav {
     }
 
     .logo-img {
-        width: 200px; 
+        width: 300px; 
         height: auto;
     }
 
    .target-burger {
         color: #fff;
-    }
-
-   .logo-text {
-        color: #fff;
-        font-size: 30px;
     }
 }
